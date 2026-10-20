@@ -67,8 +67,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TipTimeLayout() {
     var amountInput by remember { mutableStateOf("") }
+    var tipInput by remember { mutableStateOf("") }
     val amount = amountInput.toDoubleOrNull() ?: 0.0
-    val tip = calculateTip(amount)
+    val tipPercent = tipInput.toDoubleOrNull() ?: 0.0
+    val tip = calculateTip(amount, tipPercent)
     Column(
         modifier = Modifier
             .statusBarsPadding()
@@ -93,8 +95,8 @@ fun TipTimeLayout() {
         )
         EditNumberField(
             label = R.string.how_was_the_service,
-            value = "",
-            onValueChange = { },
+            value = tipInput,
+            onValueChange = { tipInput = it },
             modifier = Modifier
                 .padding(bottom = 32.dp)
                 .fillMaxWidth()
