@@ -87,7 +87,14 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
         ArtDescriptor(title = title, artist = artist, year = year)
         DisplayControl(
             onPreviewClick = { },
-            onNextClick = { }
+            onNextClick = {
+                currentArtwork = when (currentArtwork) {
+                    1 -> 2
+                    2 -> 3
+                    3 -> 4
+                    else -> 1
+                }
+            }
         )
     }
 }
