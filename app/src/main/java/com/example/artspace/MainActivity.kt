@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -162,10 +163,10 @@ fun DisplayControl(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        Button(onClick = onPreviewClick) {
+        Button(onClick = onPreviewClick, modifier = Modifier.width(120.dp)) {
             Text(stringResource(R.string.previous))
         }
-        Button(onClick = onNextClick) {
+        Button(onClick = onNextClick, modifier = Modifier.width(120.dp)) {
             Text(stringResource(R.string.next))
         }
     }
