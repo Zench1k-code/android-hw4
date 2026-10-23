@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Button
@@ -110,11 +111,18 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
 fun ArtworkWall(
     @DrawableRes imageRes: Int,
     modifier: Modifier = Modifier){
-    Image(
-        painter = painterResource(imageRes),
-        contentDescription = stringResource(R.string.artwork_description),
-        modifier = modifier.padding(16.dp)
-    )
+    Surface(
+        modifier = modifier.padding(16.dp),
+        shadowElevation = 8.dp
+    ) {
+        Image(
+            painter = painterResource(imageRes),
+            contentDescription = stringResource(R.string.artwork_description),
+            modifier = Modifier
+                .heightIn(max = 500.dp)
+                .padding(24.dp)
+        )
+    }
 }
 
 @Composable
