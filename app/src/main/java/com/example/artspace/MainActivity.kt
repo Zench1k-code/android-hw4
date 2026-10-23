@@ -7,10 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -49,6 +51,7 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
     ) {
         ArtworkWall()
         ArtDescriptor()
+        DisplayControl()
     }
 }
 
@@ -79,6 +82,20 @@ fun ArtDescriptor(modifier: Modifier = Modifier){
     }
 }
 
+@Composable
+fun DisplayControl(modifier: Modifier = Modifier){
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        Button(onClick = { } ) {
+            Text(stringResource(R.string.previous))
+        }
+        Button(onClick = { }) {
+            Text(stringResource(R.string.next))
+        }
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
