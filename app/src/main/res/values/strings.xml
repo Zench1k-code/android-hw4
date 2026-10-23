@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Art Space</string>
+    <string name="artwork_title">Artwork Title</string>
+    <string name="artwork_artist">Artist Name</string>
+    <string name="artwork_year">2024</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="artwork_description">Artwork image</string>
 </resources>
