@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ArtSpaceTheme {
-                Surface(modifier = Modifier.fillMaxSize()) {
+                Surface(modifier = Modifier.fillMaxSize(),) {
                     ArtSpaceApp()
                 }
             }
@@ -140,8 +140,9 @@ fun ArtDescriptor(
     Column(
         modifier = modifier
             .background(MaterialTheme.colorScheme.surfaceVariant)
+            .width(300.dp)
             .padding(16.dp),
-        horizontalAlignment = Alignment.Start
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = stringResource(title),
